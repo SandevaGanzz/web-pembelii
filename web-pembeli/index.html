@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Web Panel Pembeli</title>
+  <link rel="stylesheet" href="cts.css"/>
+</head>
+<body>
+  <section id="welcome">
+    <h1>Selamat Datang di Toko Panel</h1>
+    <p>Beli panel Pterodactyl cepat & mudah</p>
+    <button onclick="showProducts()">Lihat Produk</button>
+  </section>
+
+  <section id="products" class="hidden">
+    <h2>Panel Public</h2>
+    <div id="publicList" class="products"></div>
+    <h2>Panel Private</h2>
+    <div id="privateList" class="products"></div>
+    <button id="continueBtn" class="hidden" onclick="showPaymentForm()">Lanjut Pembayaran</button>
+  </section>
+
+  <section id="paymentForm" class="hidden">
+    <h2>Checkout</h2>
+    <p><strong>Paket:</strong> <span id="summaryPackage"></span></p>
+    <p><strong>Harga:</strong> Rp <span id="summaryPrice"></span></p>
+    <input type="email" id="email" placeholder="Email Anda"/>
+    <input type="text" id="whatsapp" placeholder="Nomor WhatsApp"/>
+    <textarea id="catatan" placeholder="Catatan tambahan"></textarea>
+    <input type="file" id="bukti" accept="image/*" onchange="previewBukti(event)"/>
+    <img id="preview" class="hidden" style="max-width: 200px; display: block; margin-top: 10px;"/>
+    <button onclick="submitOrder()">Kirim Pesanan</button>
+  </section>
+
+  <section id="success" class="hidden">
+    <h2>Pembayaran Berhasil!</h2>
+    <p>Silakan tunggu konfirmasi admin.</p>
+    <button onclick="resetForm()">Kembali</button>
+  </section>
+
+  <script src="main.js"></script>
+</body>
+</html>
